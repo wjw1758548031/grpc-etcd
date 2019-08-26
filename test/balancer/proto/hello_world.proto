@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package proto;
+
+service HelloWorld {
+    rpc Hello(HelloRequest) returns (HelloResponse)  {}
+}
+
+message HelloRequest {
+    string name = 1;
+}
+
+message HelloResponse {
+    //用户ID
+    int64 id = 1;
+    UserReply user_reply = 2;
+}
+
+
+message UserReply {
+    //用户ID
+    int64 id = 1;
+    //用户名
+    string username = 2;
+    //证件类型
+    string type = 3;
+    //真实姓名
+    string truename = 4;
+    //邮箱
+    string email = 5;
+    //手机号
+    string mobile = 6;
+    //是否开启支付验证
+    string payPassword = 7;
+    //认证等级
+    int32 authLevel = 8;
+    //openId
+    string openId = 10;
+}
